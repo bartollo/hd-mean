@@ -1,0 +1,22 @@
+<h1>Chamados</h1>
+
+<a href="/#!/chamados/cadastrar" class="btn btn-success">Cadastrar</a>
+<a href="/#!/home_user" class="btn btn-light">Home</a>
+
+<table class="table">
+	<tr>
+		<th>Título</th>
+		<th>Descricao</th>
+		<th>Status</th>
+		<th colspan="2">Ação</th>
+	</tr>
+	<tr ng-repeat="chamado in chamados">
+		<td ng-bind="chamado.titulo"></td>
+		<td ng-bind="chamado.descricao"></td>
+		<td ng-bind="chamado.status"></td>
+		
+		<td> <a href="/#!/chamados/editar/{{chamado._id}}" class="btn btn-warning">Editar</a></td>
+		<td><button ng-click="removerChamado(chamado)" class="btn btn-danger">Apagar</button></td>
+	</tr>
+	
+</table>
